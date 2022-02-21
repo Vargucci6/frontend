@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { InicioComponent } from '../inicio/inicio.component';
 
 @Component({
   selector: 'app-home',
@@ -70,6 +71,9 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/login']);
     sessionStorage.setItem('token', "");
     this.toastSvc.success(`Sesió cerrada correctamente`, 'New Inntech');
+  }
+  registrar(){
+    const dialogRef = this.dialog.open(InicioComponent);
   }
   openDialog(id: number) {
     this.httpClient.get<Usuarios[]>(`${this.backendHost}customers/${id}`)

@@ -64,8 +64,6 @@ export class InicioComponent {
       .subscribe(res => {
         if (res == true) {
           this.toastSvc.success(`Usuario guardado corractamente, puedes iniciar sesión`, 'New Inntech');
-          console.log(this.signUpForm.value)
-          this.router.navigate(['/login']);
         } else if (res == false) {
           this.toastSvc.error(`Correo electrónico ya usado, intenta con otro`, 'New Inntech');
         } else {

@@ -30,11 +30,19 @@
     .example-element-detail {
       overflow: hidden;
       display: flex;
+      justify-content: center;
+      width: 100%;
       .example-element-diagram {
+        width: 100%;
         padding: 5px;
-        .example-element {
-          font-size: 16px;
-          line-height: normal;
+        padding-top: 25px;
+        .container__dates {
+          display: flex;
+          justify-content: space-between;
+          .example-element {
+            font-size: 16px;
+            line-height: normal;
+          }
         }
       }
     }
