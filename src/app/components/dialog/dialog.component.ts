@@ -55,5 +55,15 @@ export class DialogComponent implements OnInit {
         }
       });
   }
+  delete() {
+    this.httpClient.delete(`${this.backendHost}delete/${this.id_user}`)
+      .subscribe(res => {
+        if (res) {
+          this.toastSvc.success(`Usuario eliminado correctamente`, 'New Inntech');
+        } else {
+          this.toastSvc.error(`Error al eliminar usuario`, 'New Inntech');
+        }
+      });
+  }
 
 }
